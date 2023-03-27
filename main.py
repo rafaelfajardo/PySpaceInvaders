@@ -16,7 +16,7 @@ class PySpaceInvaders:
     def __init__(self):
 
         # We create a surface in which sprites will be shown
-        self.window_surface = pygame.display.set_mode(WINDOW_SIZE, pygame.SCALED)
+        self.window_surface = pygame.display.set_mode(WINDOW_SIZE, pygame.SCALED) # SCALED only works with pygame v2
 
         # Variables for game loop
         self.update_time_delay = 0
