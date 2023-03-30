@@ -6,7 +6,7 @@ import pygame
 #initialize joystick module
 pygame.joystick.init()
 #create an object list of available connected joysticks
-joysticks = [pygame.joystick.Joystic(index) for index in range(pygame.joystick.get_count())]
+joysticks = [pygame.joystick.Joystick(index) for index in range(pygame.joystick.get_count())]
 #print to console for testing
 print (joysticks)
 
