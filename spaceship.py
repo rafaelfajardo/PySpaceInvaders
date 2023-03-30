@@ -162,6 +162,10 @@ class Spaceship:
                     pygame.quit()
                     sys.exit()
 
+            if event.type == pygame.JOYBUTTONDOWN:
+                if pygame.joystick.Joystic(0).get_button(0):
+                    self.is_firing = True
+
     def _move(self, dt):
 
         # If no moving direction, stay idle
