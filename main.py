@@ -301,7 +301,7 @@ class PySpaceInvaders:
         for alien in self.aliens:
             if alien.rect.top >= (WORLD_DIM[1] -1):
                 self._game_over()
-        return Falses
+        return False
 
     def _build_sprite_from_mask(self, barricade):
 
