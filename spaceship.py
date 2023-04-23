@@ -171,7 +171,7 @@ class Spaceship:
                 self.joy[event.joy].axis[event.axis] = event.value
                 if event.axis == 0 and event.value < -0.5:
                     self.moving_direction = MovingDirection.LEFT
-                if event.axis == 0 and event.value > 0.5:
+                elif event.axis == 0 and event.value > 0.5:
                     self.moving_direction = MovingDirection.RIGHT
                 else:
                     self.moving_direction = MovingDirection.IDLE
