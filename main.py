@@ -3,6 +3,12 @@ import random
 import sys
 
 import pygame
+#initialize joystick module
+pygame.joystick.init()
+#create an object list of available connected joysticks
+joysticks = [pygame.joystick.Joystick(index) for index in range(pygame.joystick.get_count())]
+#print to console for testing
+print (joysticks)
 
 from alien import Aliens
 from config import *
@@ -37,6 +43,8 @@ class PySpaceInvaders:
         self.high_score = HighScore()
         self.life_counter = LifeCounter()
         self.game_over = GameOver()
+
+        pygame.mouse.set_visible(False)
 
     def play(self):
         clock = pygame.time.Clock()
