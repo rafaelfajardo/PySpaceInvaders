@@ -1,4 +1,8 @@
+import os
+
+import sys
 import pygame
+from pygame.locals import *
 
 from config import *
 from tools import MovingDirection
@@ -70,9 +74,31 @@ class Missile:
     def set_inactive(self):
         self.is_active = False
 
+class joystick_handler(object):
+    def __init__(self, id):
+        self.id = id
+        self.joy = pygame.joystick.Joystick(id)
+        self.name = self.joy.get_name()
+        self.joy.init()
+        self.numaxes = self.joy.get_numaxes()
+        self.numbuttons = self.joy.get_numbuttons()
+
+        self.axis()
+        for i in range(self.numaxes):
+            self.axis.append(self.joy.get_axis(i))
+
+        self.button = []
+        for i in range(self.numbuttons):
+            self.button.append(self.joy.get_button(i))
+
 class Spaceship:
 
     def __init__(self):
+
+        self.joycount = pygame.joystick.get_count()
+        self.joy = []
+        for i in range(self.joycount):
+            self.joy.append(joystick_handler(i))
 
         self.sprite = pygame.image.load(SPRITE_PATH + SPACESHIP_SPRITE_NAME)
         self.rect = self.sprite.get_rect(center=SPACESHIP_STARTING_POSITION)
@@ -90,6 +116,7 @@ class Spaceship:
         self.is_destroyed = False
         self.delay_since_explosion = 0
         self.is_active = True
+        self.restart = False
 
     def reset(self):
         self.shoot_sound.stop()
@@ -138,6 +165,33 @@ class Spaceship:
     def _handle_events(self, events):
 
         for event in events:
+
+# This joystick keymapping was designed and tested for the Hyperkin Trooper2 Joystick
+            if event.type == JOYAXISMOTION:
+                self.joy[event.joy].axis[event.axis] = event.value
+                if event.axis == 0 and event.value < -0.5:
+                    self.moving_direction = MovingDirection.LEFT
+                if event.axis == 0 and event.value > 0.5:
+                    self.moving_direction = MovingDirection.RIGHT
+                else:
+                    self.moving_direction = MovingDirection.IDLE
+
+            if event.type == JOYBUTTONUP:
+                if event.button == 0 or event.button == 1:
+                    self.is_firing = False
+                if event.button == 4 or event.button == 5:
+                    self.restart = False
+
+            if event.type == JOYBUTTONDOWN:
+                if event.button == 0 or event.button == 1:
+                    self.is_firing = True
+                if event.button == 4 or event.button == 5:
+                    if self.restart == True:
+                        self.destroy()
+                    else:
+                        self.restart = True
+
+
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
                     self.moving_direction = MovingDirection.LEFT
@@ -155,30 +209,6 @@ class Spaceship:
                     pygame.quit()
 #                    sys.exit()
 
-
-            if event.type == pygame.KEYUP:
-                if event.key == pygame.K_LEFT and self.moving_direction == MovingDirection.LEFT:
-                    self.moving_direction = MovingDirection.IDLE
-
-                if event.key == pygame.K_RIGHT and self.moving_direction == MovingDirection.RIGHT:
-                    self.moving_direction = MovingDirection.IDLE
-
-                if event.key == pygame.K_SPACE:
-                    self.is_firing = False
-
-                if event.key == pygame.K_ESCAPE:
-                    pygame.quit()
-#                    sys.exit()
-
-            if event.type == pygame.JOYBUTTONDOWN:
-#                if pygame.joystick.Joystick(0).get_button(0):
-#                    self.is_firing = True
-                print(event)
-
-            if event.type == pygame.JOYBUTTONUP:
-                print(event)
-
-            
 
     def _move(self, dt):
 

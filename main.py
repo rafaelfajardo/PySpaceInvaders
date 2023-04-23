@@ -44,6 +44,8 @@ class PySpaceInvaders:
         self.life_counter = LifeCounter()
         self.game_over = GameOver()
 
+        pygame.mouse.set_visible(Falses)
+
     def play(self):
         clock = pygame.time.Clock()
         while True:
