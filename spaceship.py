@@ -148,6 +148,14 @@ class Spaceship:
                 if event.key == pygame.K_SPACE:
                     self.is_firing = True
 
+#                if event.key == pygame.K_F12:
+#                    pygame.display.toggle_fullscreen()
+
+                if event.key == pygame.K_ESCAPE:
+                    pygame.quit()
+#                    sys.exit()
+
+
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT and self.moving_direction == MovingDirection.LEFT:
                     self.moving_direction = MovingDirection.IDLE
@@ -160,7 +168,7 @@ class Spaceship:
 
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
-                    sys.exit()
+#                    sys.exit()
 
             if event.type == pygame.JOYBUTTONDOWN:
 #                if pygame.joystick.Joystick(0).get_button(0):

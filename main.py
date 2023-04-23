@@ -22,7 +22,8 @@ class PySpaceInvaders:
     def __init__(self):
 
         # We create a surface in which sprites will be shown
-        self.window_surface = pygame.display.set_mode(WINDOW_SIZE)
+        self.window_surface = pygame.display.set_mode(WINDOW_SIZE, pygame.FULLSCREEN)
+
 
         # Variables for game loop
         self.update_time_delay = 0
@@ -63,6 +64,7 @@ class PySpaceInvaders:
                 # Here, it's all the update that involves several entities, like collision
                 self._update_life_count()
                 self._collide()
+                self._check_invasion()
 
             frame_count = self._get_frame_count(dt)
             if frame_count > 0:
@@ -299,6 +301,13 @@ class PySpaceInvaders:
                 # We remove the pixel under a given probability
                 if random.random() < BARRICADE_DESTRUCTION_PROBABILITY:
                     barricade.mask.set_at((x, y), 0)
+
+    def _check_invasion(self):
+        # check whether aliens have passed reached the ground
+        for alien in self.aliens:
+            if alien.rect.top >= (WORLD_DIM[1] -1):
+                self._game_over()
+        return False
 
     def _build_sprite_from_mask(self, barricade):
 
