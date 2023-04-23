@@ -83,7 +83,7 @@ class joystick_handler(object):
         self.numaxes = self.joy.get_numaxes()
         self.numbuttons = self.joy.get_numbuttons()
 
-        self.axis()
+        self.axis = []
         for i in range(self.numaxes):
             self.axis.append(self.joy.get_axis(i))
 
