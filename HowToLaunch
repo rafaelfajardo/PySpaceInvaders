@@ -66,6 +66,10 @@ systems:
 		change resolution of display target to make game bigger
 		commented out main.py lines 91, 92, 132, 133
 		add joystick support
+			Esteban Fajardo consulting programmer
+			https://github.com/denilsonsa/pygame-joystick-test
+			which I forked as
+			https://github.com/rafaelfajardo/pygame-joystick-test
 
 ===
 Operating system images available at:
