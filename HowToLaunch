@@ -11,7 +11,7 @@ scroll down to RESOLUTION and yet another sub-menu will pop out
 scroll to 1280 x 1080 and click, the menus will collapse
 with mouse click APPLY button in Screen Layout Editor window
 another window with a confirmation query will open
-your options are 
+your options are
 	YES to accept changes and reboot now,
 	NO to accept changes and reboot later,
 	close this confirmation window by clicking on "x" in upper right corner
@@ -40,7 +40,7 @@ https://github.com/Seitoh63/PySpaceInvaders
 
 Art for the sprites was designed by Eric Garcia
 
-The systems were integrated by Rafael Fajardo
+The systems were integrated by Rafael Fajardo, with help from Esteban Fajardo
 
 Eric and Rafael were brought together by Victoria Lyall
 
@@ -48,7 +48,7 @@ systems:
 	Raspberry Pi 3B+ for initial development
 	Raspberry Pi 4B for completion and archival exhibition
 
-	====	
+	====
 	to do
 		try pyinstaller to make exe
 			terminal: pip install -U pyinstaller
@@ -57,7 +57,7 @@ systems:
 		try boot into game with some autoexec script
 	====
 	done
-		replace images in "sprite" folder with those by Eric 
+		replace images in "sprite" folder with those by Eric
 		preserve file names
 		resample or redraw a couple to match original dimensions
 		may have to adjust code to add to alien class
@@ -65,9 +65,13 @@ systems:
 		place copy of original images into "sprite alt" folder
 		change resolution of display target to make game bigger
 		commented out main.py lines 91, 92, 132, 133
+		add joystick support
 
-
-
+===
+Operating system images available at:
+https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2022-09-26/
+direct download link:
+https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2022-09-26/2022-09-22-raspios-bullseye-armhf.img.xz
 ===
 Operating SYSTEM INFO
 
@@ -91,7 +95,7 @@ sweat@raspberrypi:~ $ cat /proc/cpuinfo
 processor	: 0
 model name	: ARMv7 Processor rev 4 (v7l)
 BogoMIPS	: 38.40
-Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32
 CPU implementer	: 0x41
 CPU architecture: 7
 CPU variant	: 0x0
@@ -101,7 +105,7 @@ CPU revision	: 4
 processor	: 1
 model name	: ARMv7 Processor rev 4 (v7l)
 BogoMIPS	: 38.40
-Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32
 CPU implementer	: 0x41
 CPU architecture: 7
 CPU variant	: 0x0
@@ -111,7 +115,7 @@ CPU revision	: 4
 processor	: 2
 model name	: ARMv7 Processor rev 4 (v7l)
 BogoMIPS	: 38.40
-Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32
 CPU implementer	: 0x41
 CPU architecture: 7
 CPU variant	: 0x0
@@ -121,7 +125,7 @@ CPU revision	: 4
 processor	: 3
 model name	: ARMv7 Processor rev 4 (v7l)
 BogoMIPS	: 38.40
-Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32
 CPU implementer	: 0x41
 CPU architecture: 7
 CPU variant	: 0x0
