@@ -1,12 +1,37 @@
-# PySpaceInvaders
+# Coyotl-Invasores-Invaders made with PySpaceInvaders
+
+## Coyotl-Invasores-Invaders
+
+Coyotl-Invasores-Invaders (working title) remixes Space Invaders as an artwork which premiered in _Aim_High_ at Ogden Contemporary Art, May 5, 2023.
+Eric Garcia, Rafael Fajardo, and Esteban Fajardo contributed to the remix. Eric Garcia created the sprites and the idea. Rafael Fajardo integrated the sprites and the code, upgrading it for exhibition. Esteban Fajardo extended the capabilities by adding support for a joystick.
+
+## Aim High hardware and software setup
+
+The hardware and software system for the Aim High exhibition is:
+Raspberry Pi model 4B+
+Hyperkin Trooper 2 joystick gamepad
+Vilros aluminum passive cooled case
+Vilros power supply with integrated on/off switch
+USB mouse and keyboard
+RasPiOS Bullseye 2022-11 release
+  Python3 default installation for this RasPiOS version
+  Pygame 1.9 default installation for this RasPiOS version
+
+more detailed system specs in HowToLaunch.txt
+
+## Developer Diary
+
+Developer Diary and notes are found in invasores.txt
+
+## Original Read Me for PySpaceInvaders
 
 [![Language](https://img.shields.io/badge/language-python-blue.svg?style=flat)](https://www.python.org)
 [![Module](https://img.shields.io/badge/module-pygame-brightgreen.svg?style=flat)](http://www.pygame.org/news.html)
 [![Release](https://img.shields.io/badge/release-v1.0-orange.svg?style=flat)]()
 
-## Space Invaders
+## Space Invaders recreated by Seitoh63
 
-Space invaders is originally an arcade game released in 1978. It is a 2D shooter, the first of its genre. 
+Space invaders is originally an arcade game released in 1978. It is a 2D shooter, the first of its genre.
 The goal, as for most of the arcade game of this time, is to obtain the highest score by destroying continuously the incoming aliens.
 
 Here is two gifs of gameplay :
@@ -16,11 +41,11 @@ Here is two gifs of gameplay :
 </p>
 
 
-## Gameplay 
+## Gameplay
 
 Many aliens are invading world and move slowly to you, shooting laser randomly in your direction.
 
-The spaceship (aka the player) can move on the horizontal axis, avoiding laser shots. 
+The spaceship (aka the player) can move on the horizontal axis, avoiding laser shots.
 The spaceship can also fire at aliens, but it should aim properly since it's only one shot at a time.
 It can take cover below barriers, but they are gradually destroyed by enemy lasers and spaceship missiles.
 
@@ -51,7 +76,7 @@ Sprites come from :
 - https://www.deviantart.com/gooperblooper22/art/Space-Invaders-Sprite-Sheet-135338373
 - https://www.spriters-resource.com/arcade/spaceinv/
 
-Sounds have been edited but the original material comes from : 
+Sounds have been edited but the original material comes from :
 - https://www.classicgaming.cc/classics/space-invaders/sounds
 
 Gameplay inspiration comes from youtube :
