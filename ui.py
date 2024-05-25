@@ -73,9 +73,10 @@ class LifeCounter:
             rect.left, rect.top = (rect.left + LIFE_POS_SHIFT[0] + rect.w, rect.top + LIFE_POS_SHIFT[1])
 
     def one_up(self):
-        self.life_count += 1
-        self.life_gain_count += 1
-        self.one_life_up_sound.play()
+        if self.life_count < 7: #added this condition to prevent crash from accumulating too many lives
+            self.life_count += 1
+            self.life_gain_count += 1
+            self.one_life_up_sound.play()
 
 
 class GameOver:

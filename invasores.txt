@@ -119,4 +119,7 @@ I need to create a PDF document for Eric and the gallery with instructions for i
 My son productively broke the game. When the invaders overrun the player, but the player can dodge them, then the game continues without a "game over". My son is clever and figured out how to fix this. We created a new branch to implement the changes.
 
 ====
+2024 05 25
+Added a line to ui.py at line number 76 to address too many lives accumulated
+
 end of file
