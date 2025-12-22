@@ -122,4 +122,49 @@ My son productively broke the game. When the invaders overrun the player, but th
 2024 05 25
 Added a line to ui.py at line number 76 to address too many lives accumulated
 
+====
+2025 12 22
+Merged change from 2024 05 25 to "master" branch. This change has been field tested. Change line 76 to set maximum possible self.life_count to 6 for gameplay aesthetics.
+
+The merge makes the limit max life branch canonical.
+
+Eric is scheduled to exhibit the game in Greeley, CO, January 22, 2026. His copy of the game is the prior version and so crashes. He requested the fix in November not knowing I had already fixed it. Now to create a distribution to share with him.
+
+Have spent the last two weeks figuring out how to back up my copy of the microSD card containging Raspbery Pi OS Bullseye and the canoncial versions of Python and Pygame.
+
+after several failed attempts I've managed to recreate the microSD card of Invaders/Invasores/Coyotle a.k.a. (Aim High) Space Invaders: Historical Edition.
+
+In order to share with Eric J. Garcia, my collaborator, the version of the game that fixes the issue of a player earning too many extra-lives which crashes the game, I have tried making a copy of the live system microSD card on my prototype device (RASPI 3B+) using the built-in SD card copier app. This failed to boot, even though it is the recommended way to back up a disk image of a live (i.e. on and running on the device to be backed up) system.
+
+(note pasted in from a text file from 2025 12 19)
+What worked: I downloaded the latest Raspberry Pi OS (Trixie) and etched it to an SD card using my MacBook Pro and the latest version of the Raspberry Pi Imager app. I inserted the microSD card with Trixie onto my prototype device and booted it up. I got a fresh microSD card (Sandisk Extreme Pro 32 GB) to match the one working copy I have and inserted it into a SD card reader I have had for several years. I downloaded the Raspberry Pi OS Bullseye version from 2022 (link in the How To Launch document) to the prototype device (very slow download from Raspberry Pi Org archives). I then used the Raspberry Pi Imager app to etch the fresh microSD with RPiOS Bullseye.
+
+I then shut down the prototype device.
+I took out the RPi OS Trixie version microSD card from the device.
+I inserted the RPi OS Bullseye microSD card into the device.
+I booted up the device. It took long enough that I had to cross my fingers.
+It booted up. It alerted me to the existence of updates. I read through the list of packages that would be updated and noted that there are several Python related packages. I decided against updating the packages.
+I opened the Chromium browser.
+I navigated to https://github.com/rafaelfajardo
+I navigated to the PySpaceInvaders fork
+I navigated to the Limit_Max_Lives branch of the game
+I downloaded the code of the game as a zip archive to the prototype device's microSD card
+I closed the browser
+I opened a file manager window
+I navigated to the downloads folder
+I right-clicked and extracted the contents of the game zip archive to desktop
+I closed the file manager window
+On the desktop, I right-clicked on the game folder icon and selected open in terminal
+In the terminal window that launched I typed "python main.py" to test the game
+It worked!
+
+I've been trying to get this to work for the last ten days or so. I'll list the failures below.
+I tried to use SD Card Copier app on the live prototype/dev system to etch another microSD card (Lexar 4GB) which was both a different make and size. I used my USB-A dock with built-in SD card reader normally attached to my PiTop device. The newly etched card would not boot.
+I tried to use the latest version of the Raspberry Pi Imager app on my MacBook Pro (Ventura) with several different older versions of the OS. The version of Bullseye embedded in this imager is for Apple and PC x86 hardware, incompatible with Raspberry Pi ARM hardware. The oldest current version of the Raspberry Pi OS is Bookworm.
+I tried to use the Raspberry Pi Imager for MacOS to put a version of Bookworm on the Lexar microSD card. It booted on the prototype system. It has an Over/Under-scan error that I cannot correct on my TV. I downloaded the code for the Limit_Max_Lives branch. The game launched but was butted up against the top-left corner of the TV rather than centered. This is unacceptable. The RaspPi-Info command in CLI revealed a new version of PyGame. This is not a useful solution.
+I decided to use the Raspberry Pi Imager for MacOS to put the most current Raspberry Pi OS (Trixie) on the two Lexa 4GB microSD cards. This booted on the prototype system.
+I purchased several 32GB SanDisk Pro Extreme microSD cards to match the working one and proceeded as detailed in the successful case above.
+
+I have been stress testing the reconstructed working system so that I can mail the micorSD card to Eric.
+
 end of file
